@@ -1,0 +1,6 @@
+alias pro="cd /home/lars/projects"
+alias fg="cd /home/lars/projects/Flightgear"
+alias c="clear"
+alias db="cd /home/lars/data/Dropbox"
+alias swift="cd /home/lars/projects/swift/pilotclient"
+alias pop="cp /home/lars/projects/tex-common/* ."
