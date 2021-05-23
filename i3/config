@@ -114,7 +114,7 @@ bindsym $mod+r mode "resize"
 ########################################
 
 # start termite
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # start rofi (program-lancher)
 bindsym $mod+d exec "rofi -show drun -theme DarkBlue"
@@ -224,7 +224,7 @@ smart_borders on
 ###############
 
 # Default workspace position
-workspace $ws1 output DVI-D-0
+workspace $ws1 output HDMI-0
 workspace $ws10 output DVI-I-1
 
 # Put spotify on ws10

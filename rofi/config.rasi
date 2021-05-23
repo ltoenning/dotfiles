@@ -10,7 +10,7 @@ configuration {
 	ssh-client: "ssh";
 	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
 	icon-theme: "Monokai";
-	disable-history: true;
+	disable-history: false;
 	case-sensitive: false;
 	cycle: false;
 	sidebar-mode: true;

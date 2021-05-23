@@ -6,8 +6,8 @@ right = DVI-I-1
 
 [global/settings]
 hwmon_path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
-mountpoint_1 = /
-mountpoint_2 = /home/lars/data
+mountpoint_0 = /
+mountpoint_1 = /home/lars/data
 
 [global/base]
 bottom = true
@@ -188,7 +188,7 @@ label = %percentage-sum%%
 
 [module/date]
 type = internal/date
-date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M:%S%%{F-}
+date =    %%{F#ccffffff}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M:%S%%{F-}
 date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 
 [module/memory]
