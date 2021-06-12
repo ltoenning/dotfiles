@@ -22,6 +22,12 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# And same for vim-like-bindings
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
@@ -35,13 +41,13 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout tabbed
@@ -128,8 +134,14 @@ bindsym $mod+s exec "rofi -show window -theme DarkBlue"
 #start emacs
 bindsym $mod+e exec emacs
 
+# start firefox
+bindsym $mod+f exec firefox
+
+# start thunderbird
+bindsym $mod+t exec thunderbird
+
 # Lock screen
-bindsym --release $mod+l exec $HOME/dotfiles/screen-lock/linux-lock.sh
+bindsym --release $mod+Shift+l exec $HOME/dotfiles/screen-lock/linux-lock.sh
 
 # Open gnome-screenshot
 bindsym Print exec gnome-screenshot -i
