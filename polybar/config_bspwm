@@ -51,7 +51,7 @@ tray-position = right
 [bar/center]
 monitor = ${global/monitors.center}
 inherit = global/base
-modules-right = spotify wired-network filesystem_1 temperature memory cpu date
+modules-right = spotify pulseaudio filesystem_1 temperature memory cpu date
 
 [module/metar]
 type = custom/script
@@ -155,7 +155,7 @@ inline-mode = false
 
 ; Create click handler used to focus workspace
 ; Default: true
-enable-click = true
+enable-click = false
 
 ; Create scroll handlers used to cycle workspaces
 ; Default: true
@@ -163,7 +163,7 @@ enable-scroll = false
 
 ; Set the scroll cycle direction 
 ; Default: true
-reverse-scroll = false
+reverse-scroll = true
 
 ; Use fuzzy (partial) matching on labels when assigning 
 ; icons to workspaces
@@ -188,3 +188,23 @@ ws-icon-5 = 10;
 label-separator = |
 label-separator-padding = 1
 label-separator-foreground = #ffb52a
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+label-muted = muted
+label-muted-foreground = #ff0000
+
+; Right and Middle click
+click-right = pavucontrol
