@@ -6,7 +6,7 @@
  '(custom-safe-themes
    '("f7fed1aadf1967523c120c4c82ea48442a51ac65074ba544a5aefc5af490893b" default))
  '(package-selected-packages
-   '(ranger org-bullets forge magit counsel-projectile projectile evil-collection evil general doom-themes which-key rainbow-delimiters doom-modeline counsel ivy-rich ivy delight use-package)))
+   '(dashboard ranger org-bullets forge magit counsel-projectile projectile evil-collection evil general doom-themes which-key rainbow-delimiters doom-modeline counsel ivy-rich ivy delight use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -260,3 +260,12 @@
 ;;; ranger ;;;
 ;;;;;;;;;;;;;;
 (use-package ranger)
+
+;;;;;;;;;;;;;;;;;
+;;; dashboard ;;;
+;;;;;;;;;;;;;;;;;
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+(setq dashboard-center-content t)
