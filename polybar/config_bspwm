@@ -1,0 +1,190 @@
+[global/monitors]
+left = DVI-D-0
+center = HDMI-0
+right = DVI-I-1
+
+
+[global/settings]
+hwmon_path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+mountpoint_0 = /
+mountpoint_1 = /home/lars/data
+
+[global/base]
+bottom = false
+width = 100%
+height = 27
+
+background = #aa000000
+foreground = #ccffffff
+
+line-color = #88000000
+line-size = 2
+
+spacing = 3
+padding-right = 4
+module-margin-left = 0
+module-margin-right = 6
+
+font-0 = NotoSans-Regular:size=8;0
+font-1 = unifont:size=6;-3
+font-2 = FontAwesome5Free:style=Solid:size=8;0
+font-3 = FontAwesome5Free:style=Regular:size=8;0
+font-4 = FontAwesome5Brands:style=Regular:size=8;0
+font-5 = NotoSans-Regular:size=8;-1
+
+scroll-up = #bspwm.next
+scroll-down = #bspwm.prev
+
+modules-left = bspwm 
+
+[bar/left]
+monitor = ${global/monitors.left}
+inherit = global/base
+modules-right = metar
+
+[bar/right]
+monitor = ${global/monitors.right}
+inherit = global/base
+modules-right = date 
+tray-position = right
+
+[bar/center]
+monitor = ${global/monitors.center}
+inherit = global/base
+modules-right = spotify wired-network filesystem_1 temperature memory cpu date
+
+[module/metar]
+type = custom/script
+interval = 1200
+exec = python $HOME/dotfiles/polybar/polybar_metar/polybar-metar.py EDDL
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python $HOME/dotfiles/polybar/polybar_spotify/spotify_status.py -f '{song}: {artist}'
+format-underline = #1db954
+
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = ${global/settings.hwmon_path}
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
+
+[module/filesystem_1]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = ${global/settings.mountpoint_0}
+mount-1 = ${global/settings.mountpoint_1}
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 30
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
+format-mounted = <label-mounted>
+label-mounted = %free%
+
+[module/cpu]
+type = internal/cpu
+interval = 5
+format = <label>
+label = %percentage-sum%%
+
+[module/date]
+type = internal/date
+date =    %%{F#ccffffff}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M:%S%%{F-}
+date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+
+[module/memory]
+type = internal/memory
+format = <label> 
+label = %gb_used%
+interval = 5
+
+[module/wired-network]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+label-connected =    %ifname%
+label-disconnected-foreground = #66ffffff
+
+[module/bspwm]
+type = internal/bspwm
+
+; Only show workspaces defined on the same output as the bar
+; NOTE: The bspwm and XRandR monitor names must match, which they do by default.
+; But if you rename your bspwm monitors with bspc -n this option will no longer
+; behave correctly.
+; Default: true
+pin-workspaces = true
+
+; Output mode flags after focused state label
+; Default: false
+inline-mode = false
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+label-occupied = %name% %icon%
+label-urgent = %name% %icon%
+label-empty = %name% %icon%
+label-focused = %name% %icon%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #0000ff
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 9;
+ws-icon-5 = 10;
+
+label-separator = |
+label-separator-padding = 1
+label-separator-foreground = #ffb52a
