@@ -189,6 +189,11 @@ label-separator = |
 label-separator-padding = 1
 label-separator-foreground = #ffb52a
 
+format = <label-state> <label-mode>
+label-monocle = M
+label-monocle-background = #ff0000
+
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
