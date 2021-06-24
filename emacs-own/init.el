@@ -269,3 +269,7 @@
   :config
   (dashboard-setup-startup-hook))
 (setq dashboard-center-content t)
+
+
+;; Change backup directory
+(setq backup-directory-alist `(("." . "~/emacs_backups")))
