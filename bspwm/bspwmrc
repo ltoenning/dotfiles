@@ -16,6 +16,8 @@ sh $HOME/.screenlayout/layout.sh
 feh --bg-fill $HOME/.config/i3/2.jpg
 setxkbmap -layout de,de
 sh $HOME/dotfiles/polybar/launch_polybar_bspwm.sh
+dunst &
+
 
 bspc wm -O HDMI-0 DVI-I-1 DVI-D-0
 
