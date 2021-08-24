@@ -5,6 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 sxhkd &
 # Use picom compositor
 picom &
+redshift -l 51:7 &
 
 # Hide x-cursor when on no window
 xsetroot -cursor_name left_ptr
