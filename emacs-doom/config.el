@@ -9,6 +9,7 @@
 (setq user-full-name "John Doe"
       user-mail-address "john@doe.com")
 
+(setq org-roam-directory "~/org/roam")
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -52,3 +53,5 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+(use-package! websocket :after org-roam)
+(use-package! org-roam-ui :after org-roam)
