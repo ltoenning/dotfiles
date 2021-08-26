@@ -1,0 +1,6 @@
+* Utils without special config:
+** flameshot
+** spotifyd
+** spotify-tui
+** tmux
+** w3m (Ranger image preview)
