@@ -64,3 +64,4 @@
 ;; they are implemented.
 (use-package! websocket :after org-roam)
 (use-package! org-roam-ui :after org-roam)
+(use-package! org-ref :after org :config (setq reftex-default-bibliography  '("~/org/notes/references.bib")))
