@@ -29,7 +29,7 @@
 (menu-bar-mode -1)
 
 ;; Show visible bell insted of beeping
-(setq visible-bell t)
+(setq visible-bell nil)
 
 ;; Follow symlinks automatically
 (setq vc-follow-symlinks t)
@@ -38,7 +38,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;;;;;;;;;;;;;;;;;;;;;;
-;;;;; Apperance ;;;;;;;
+;;;; Appearance ;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Font
@@ -168,13 +168,16 @@
 "f" '(:ignore t :which-key "files")
 "p" '(:ignore t :which-key "projectile")
 "b" '(:ignore t :which-key "buffers")
+"g" '(:ignore t :which-key "git")
 "ff" '(counsel-find-file :which-key "find file")
+"fr" '(counsel-recentf :which-key "recent files")
 "fs" '(save-buffer :which-key "save file")
 "bb" '(counsel-switch-buffer :which-key "chage buffer")
 "pp" '(counsel-projectile-switch-project :which-key "change project")
 "pf" '(counsel-projectile-find-file :which-key "find find")
 "bd" '(kill-this-buffer :which-key "kill buffer")
 "ps" '(counsel-projectile-rg :which-key "search")
+"gg" '(magit-status :which-key "show magit")
 "qq" '(save-buffers-kill-terminal :which-key "quit emacs")))
 
 ;;;;;;;;;;;;
@@ -272,4 +275,4 @@
 
 
 ;; Change backup directory
-(setq backup-directory-alist `(("." . "~/emacs_backups")))
+(setq backup-directory-alist `(("." . "~/.emacs_backups")))
