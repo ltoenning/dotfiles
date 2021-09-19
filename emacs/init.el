@@ -1,0 +1,12 @@
+(defun load-config (config-file)
+  (load-file (expand-file-name config-file "~/.emacs.d"))) 
+
+(load-config "keymaps.el")
+(load-config "general.el")
+(load-config "appearance.el")
+(load-config "git.el")
+(load-config "org.el")
+(load-config "ivy.el")
+(load-config "projectile.el")
+(load-config "evil.el")
+(load-config "packages.el")
