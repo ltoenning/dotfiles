@@ -26,3 +26,5 @@
   :config
   (dashboard-setup-startup-hook))
 (setq dashboard-center-content t)
+
+(use-package lua-mode)
