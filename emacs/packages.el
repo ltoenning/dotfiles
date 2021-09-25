@@ -28,3 +28,12 @@
 (setq dashboard-center-content t)
 
 (use-package lua-mode)
+
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
+
+(lt/leader-keys
+"u" '(:ignore t :which-key "undo")
+"uv" '(undo-tree-visualize :which-key "undo visualize")
+)
