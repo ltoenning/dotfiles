@@ -34,6 +34,7 @@
   "n" '(:ignore t :which-key "notes")
   "nr" '(:ignore t :which-key "roam")
   "nrf" '(org-roam-node-find :which-key "find node")
+  "nri" '(org-roam-node-insert :which-key "insert node")
   )
 
 
