@@ -35,3 +35,8 @@
   "nr" '(:ignore t :which-key "roam")
   "nrf" '(org-roam-node-find :which-key "find node")
   )
+
+
+(use-package org-roam-ui
+  :straight
+  (:host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out")))
