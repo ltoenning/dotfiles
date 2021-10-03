@@ -1,7 +1,8 @@
 ;;;;;;;;;;;;;
 ;;; Magit ;;;
 ;;;;;;;;;;;;;
-(use-package magit)
+(use-package magit
+  :config (define-key transient-map (kbd "<escape>") 'transient-quit-one))
 (add-hook 'git-commit-mode-hook 'evil-insert-state)
 (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
 
