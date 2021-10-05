@@ -7,7 +7,7 @@
 ;;;;;;;;;;;;;;;;;;;
 (use-package doom-themes)
 
-(load-theme 'doom-opera)
+(load-theme 'doom-monokai-classic)
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;; Doom Modeline ;;;
