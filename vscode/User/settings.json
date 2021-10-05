@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Monokai Dimmed",
+    "terminal.integrated.fontFamily": "'monospace', 'FontAwesome','PowerlineSymbols'",
+    "workbench.startupEditor": "none",
+    "gitlens.codeLens.enabled": false,
+    "editor.renderControlCharacters": true,
+    "keyboard.dispatch": "keyCode"
+}

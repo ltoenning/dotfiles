@@ -1,0 +1,7 @@
+{
+	"std::cout": {
+		"prefix": "cout",
+		"body": ["std::cout << \"${1:Output}\" << std::endl"],
+		"description": "Log output to console"
+	}
+}
