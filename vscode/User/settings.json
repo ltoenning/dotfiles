@@ -4,5 +4,6 @@
     "workbench.startupEditor": "none",
     "gitlens.codeLens.enabled": false,
     "editor.renderControlCharacters": true,
-    "keyboard.dispatch": "keyCode"
+    "keyboard.dispatch": "keyCode",
+    "telemetry.telemetryLevel": "off"
 }

@@ -35,8 +35,11 @@
   "nr" '(:ignore t :which-key "roam")
   "nrf" '(org-roam-node-find :which-key "find node")
   "nri" '(org-roam-node-insert :which-key "insert node")
+  "o" '(:ignore t :which-key "org")
+  "ol" '(org-latex-preview :which-key "latex preview")
   )
 
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0)) ;; https://stackoverflow.com/a/11272625
 
 (use-package org-roam-ui
   :straight
