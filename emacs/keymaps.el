@@ -4,9 +4,19 @@
 
 ;; General keyboard bindings
 (use-package general
+  :init
+  (setq general-override-states '(insert
+                                  emacs
+                                  hybrid
+                                  normal
+                                  visual
+                                  motion
+                                  operator
+                                  replace))
 :config
 (general-create-definer lt/leader-keys
-:keymaps '(normal insert visual emacs)
+:states '(normal visual motion)
+:keymaps 'override
 :prefix "SPC"
 :global-prefix "C-SPC")
 (lt/leader-keys
