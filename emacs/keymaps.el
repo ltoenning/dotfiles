@@ -26,6 +26,7 @@
 "h" '(:ignore t :which-key "help")
 "s" '(:ignore t :which-key "search")
 "hf" '(describe-function :which-key "describe function")
+"hv" '(describe-variable :which-key "describe variable")
 "ff" '(counsel-find-file :which-key "find file")
 "fr" '(counsel-recentf :which-key "recent files")
 "fs" '(save-buffer :which-key "save file")
