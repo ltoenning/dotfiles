@@ -32,3 +32,8 @@
 "wj" '(evil-window-down   :which-key "select down")
 )
 
+(with-eval-after-load 'evil-maps
+  (define-key evil-motion-state-map (kbd "RET") nil))
+
+(add-hook 'evil-insert-state-entry-hook (lambda() (setq display-line-numbers 'relative)))
+(add-hook 'evil-normal-state-entry-hook (lambda() (setq display-line-numbers 'absolute)))

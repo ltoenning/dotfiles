@@ -39,3 +39,5 @@
 ;;;; smex ;;;;
 ;;;;;;;;;;;;;;
 (use-package smex)
+
+(setq ivy-use-selectable-prompt t)
