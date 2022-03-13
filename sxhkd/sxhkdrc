@@ -52,8 +52,8 @@ bspc node -s biggest.window
 #
 
 # set the window state
-super + {t,shift + t,shift + f}
-bspc node -t {tiled,pseudo_tiled,floating}
+super + {shift + t,shift + f}
+	bspc node -t {tiled,floating}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
