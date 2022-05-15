@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " Show line numbers
-set number
+set relativenumber
 
 " Enable syntax-highlighting
 syntax on
@@ -20,6 +20,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'takac/vim-hardtime'
 
 
 call vundle#end()            " required
@@ -29,3 +30,5 @@ filetype plugin indent on    " required
 
 " NERDTree settings
 nmap <F6> :NERDTreeToggle<CR>
+let g:hardtime_default_on = 1
+let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<RIGHT>", "<LEFT>"]
