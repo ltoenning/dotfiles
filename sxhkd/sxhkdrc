@@ -165,6 +165,6 @@ super + f
 super + t
       thunderbird
 
-super + shift + t
+super + ctrl + Up
 	bash ~/dotfiles/screen-lock/linux-lock.sh
 
