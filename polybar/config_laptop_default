@@ -1,11 +1,9 @@
 [global/monitors]
 center = eDP
 
-
 [global/settings]
-hwmon_path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+hwmon_path = /sys/class/thermal/thermal_zone0/hwmon1/temp1_input
 mountpoint_0 = /
-mountpoint_1 = /home/lars/data
 
 [global/base]
 bottom = false
@@ -38,7 +36,7 @@ modules-left = bspwm
 [bar/center]
 monitor = ${global/monitors.center}
 inherit = global/base
-modules-right = spotify pulseaudio filesystem_1 temperature memory cpu date
+modules-right = spotify pulseaudio battery filesystem_1 temperature memory cpu date
 
 [module/metar]
 type = custom/script
@@ -52,6 +50,19 @@ format-prefix = " "
 format = <label>
 exec = python $HOME/dotfiles/polybar/polybar_spotify/spotify_status.py -f '{song}: {artist}'
 format-underline = #1db954
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 10
+label-charging =  %percentage%%
+label-discharging =   %percentage%%
+label-full =   %percentage%%
 
 [module/temperature]
 type = internal/temperature
@@ -86,7 +97,6 @@ type = internal/fs
 
 ; Mountpoints to display
 mount-0 = ${global/settings.mountpoint_0}
-#mount-1 = ${global/settings.mountpoint_1}
 
 ; Seconds to sleep between updates
 ; Default: 30
