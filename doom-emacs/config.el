@@ -74,7 +74,7 @@
   :config
   ;; https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
-  (setq org-deadline-warning-days 3)
+  (setq org-deadline-warning-days 0)
   (setq org-agenda-files '("~/org/agenda/todo.org"
                            "~/org/agenda/recurring.org"))
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
